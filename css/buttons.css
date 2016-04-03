@@ -1,0 +1,76 @@
+.share-button {
+    display:inline-block;
+    margin:4px 6px;
+    width:64px;
+    height: 64px;
+    border-radius:32px;
+    padding: 0;
+    color: #fff;
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(0,0,0,0.1));
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+    /* border, highlight, inner shadow, drop shadow */
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2),
+                inset 0 -2px 1px 0 rgba(0,0,0,0.05), inset 0 -1px 1px 0 rgba(0,0,0,0.05),
+                0 1px 0 0 rgba(0,0,0,0.1);
+}
+
+.share-button:focus {
+    background-image: none;
+}
+
+.share-button:hover {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(0,0,0,0.0));
+}
+
+.share-button:active,
+.share-button:active:focus {
+    background-image: linear-gradient(to top, rgba(255,255,255,0.3), rgba(0,0,0,0.1));
+    transition:100ms;
+    -webkit-transition:100ms;
+}
+
+
+.share-button i,
+.share-button span {
+    margin:8px;
+    vertical-align: middle;
+    color: #fff;
+    text-shadow:0 2px rgba(0,0,0,0.2);
+}
+
+
+.share-button:active span {
+    color: #fff;
+    text-shadow:0 2px rgba(0,0,0,0.2);
+}
+
+.share-button span {
+    font-size: 24px;
+    line-height: 52px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.share-button i {
+    font-size: 32px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 66px;
+    width: 64px;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Colours */
+.share-button.google-plus {background-color: #DD4B39;}
+.share-button.askubuntu {background-color: #E95420}
+.share-button.deviantart {background-color: #50CC47;}
+.share-button.github {background-color: #4078C0;}
+.share-button.launchpad {background-color: #333333;}
+.share-button.facebook {background-color: #3B5998;}
