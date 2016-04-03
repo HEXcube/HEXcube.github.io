@@ -1,0 +1,22 @@
+body {
+        margin: 0px;
+}
+header, footer, section{
+        text-align: center;
+}
+header,footer {
+        color:white;background-color:#444;
+}
+header {
+        padding:20px;
+}
+footer {
+        padding:10px;
+}
+section {
+        background-color:#ddd;padding:60px;
+}
+img {
+        max-width: 100%;
+        height: auto;
+}
