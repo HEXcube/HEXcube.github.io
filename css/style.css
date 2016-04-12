@@ -1,21 +1,40 @@
-body {
+html, body {
         margin: 0;
+        height: 100vh;
 }
-header, footer, section{
+
+body {
+        font-family: sans-serif;
+}
+
+header, footer, section, nav {
         text-align: center;
 }
+
 header,footer {
-        color:white;background-color:#444;
+        color: white;
+        background-color: #444;
 }
+
 header {
-        padding:2em;
+        padding: 2em;
 }
+
 footer {
-        padding:1px;
+        padding: 0.5em;
 }
+
 section {
-        background-color:#ddd;padding:3em;
+        padding: 5em;
+        background-color: #ddd;
+        height: 90vh;
 }
+
+nav {
+        background-color: #ddd;
+        padding: 1em;
+}
+
 img {
         max-width: 100%;
         height: auto;
