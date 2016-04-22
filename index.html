@@ -20,7 +20,11 @@
 
 <section>
   <div class="content">
-        <img src="img/hexcube-logo.svg" alt="HEXcube's Logo">
+        <picture>
+            <source media="(min-width: 361px)" srcset="img/hexcube-logo.svg, img/hexcube-logo@2.svg 2x">
+            <source media="(max-width: 360px)" srcset="img/hexcube-logo-small.svg">
+            <img src="img/hexcube-logo.png" alt="HEXcube Logo">
+        </picture>
         <h1>Hi there, I'm HEXcube!</h1>
         I just made a horrible website and you're looking at it! 😃
   </div>
