@@ -1,81 +1,81 @@
 html
 {
-				box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *, *:before, *:after
 {
-				box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 html, body
 {
-    		width: 100%;
-    		height: 100%;
-		    margin: 0;
-		    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-        font-family: sans-serif;
-        display: flex;
-        flex-direction: column;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
 
-        justify-content: flex-start; /* align items in Main Axis */
-        align-items: stretch; /* align items in Cross Axis */
-        align-content: stretch; /* Extra space in Cross Axis */
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
 }
 
 header, footer, section, nav {
-        text-align: center;
+    text-align: center;
 }
 
 header,footer {
-        color: white;
+    color: white;
 }
 
 header {
-				display: flex;
-        height: 6em;
-				z-index: 1;
-        background-color: #673ab7;
-  			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    display: flex;
+    height: 6em;
+    z-index: 1;
+    background-color: #673ab7;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 header h1 {
-				margin: auto;
+    margin: auto;
 }
 
 section {
-        display: flex;
-				flex-direction: column;
-				flex: 1;
-        background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #eee;
 }
 
 .content {
-				margin: auto;
+    margin: auto;
 }
 
 .content img {
-        max-width: 100%;
-        height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 nav {
-				z-index: 1;
-        background-color: #333;
-        padding: 1em;
-				box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 -3px 6px rgba(0,0,0,0.23);
+    z-index: 1;
+    background-color: #333;
+    padding: 1em;
+    box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 -3px 6px rgba(0,0,0,0.23);
 }
 
 
 footer {
-				display: flex;
-        height: 2em;
-        background-color: #222;
+    display: flex;
+    height: 2em;
+    background-color: #222;
 }
 
 footer p {
-				margin: auto;
+    margin: auto;
 }
