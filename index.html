@@ -6,57 +6,62 @@
     <meta name="author" content="Rohan &quot;HEXcube&quot; Villoth">
     <meta name="description" content="Personal website of Rohan &quot;HEXcube&quot; Villoth">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-    <link type="text/css" rel="stylesheet" href="css/buttons.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/buttons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 </head>
 
 <body>
 
-<header>
-    <h1>HEXcube's Website</h1>
-</header>
+  <header>
+      <h1>HEXcube's Website</h1>
+  </header>
 
-<section>
-  <div class="content">
-    <picture>
-        <source media="(min-width: 361px)" srcset="assets/logos/hexcube-logo.svg, assets/logos/hexcube-logo@2.svg 2x">
-        <source media="(max-width: 360px)" srcset="assets/logos/hexcube-logo-small.svg">
-        <img src="assets/logos/hexcube-logo.png" alt="HEXcube Logo">
-    </picture>
-    <h1>Hi there, I'm Rohan &quot;HEXcube&quot; Villoth</h1>
-    I just made a horrible website and you're looking at it! 😃
-  </div>
-</section>
+  <section>
+    <div class="content">
+      <picture>
+          <source media="(min-width: 361px)" srcset="assets/images/hexcube-logo.svg, assets/images/hexcube-logo@2.svg 2x">
+          <source media="(max-width: 360px)" srcset="assets/images/hexcube-logo-small.svg">
+          <img src="assets/images/hexcube-logo.png" alt="HEXcube Logo">
+      </picture>
+      <h1>Hi there, I'm Rohan &quot;HEXcube&quot; Villoth</h1>
+      I just made a horrible website and you're looking at it! 😃
+    </div>
+  </section>
 
-<nav>
-    <a class="share-button twitter" href="https://twitter.com/TheHEXcube" target="_blank">
-      <span><i class="fa fa-twitter"></i></span>
-    </a>
-    <a class="share-button askubuntu" href="https://askubuntu.com/users/216385/hexcube" target="_blank">
-      <span><i class="fa fa-commenting"></i></span>
-    </a>
-    <a class="share-button deviantart" href="https://hexcube.deviantart.com" target="_blank">
-      <span><i class="fa fa-deviantart"></i></span>
-    </a>
-    <a class="share-button github" href="https://github.com/HEXcube" target="_blank">
-      <span><i class="fa fa-github"></i></span>
-    </a>
-    <a class="share-button gitlab" href="https://gitlab.com/HEXcube" target="_blank">
-      <span><i class="fa fa-gitlab"></i></span>
-    </a>
-    <a class="share-button launchpad" href="https://launchpad.net/~hexcube" target="_blank">
-      <span><i class="fa fa-code"></i></span>
-    </a>
-    <a class="share-button facebook" href="https://facebook.com/HEXcube" target="_blank">
-      <span><i class="fa fa-facebook"></i></span>
-    </a>
-</nav>
+  <nav>
+      <a class="share-button twitter" href="https://twitter.com/TheHEXcube" target="_blank">
+        <span><i class="fa fa-twitter"></i></span>
+      </a>
+      <a class="share-button askubuntu" href="https://askubuntu.com/users/216385/hexcube" target="_blank">
+        <span><i class="fa fa-commenting"></i></span>
+      </a>
+      <a class="share-button deviantart" href="https://hexcube.deviantart.com" target="_blank">
+        <span><i class="fa fa-deviantart"></i></span>
+      </a>
+      <a class="share-button github" href="https://github.com/HEXcube" target="_blank">
+        <span><i class="fa fa-github"></i></span>
+      </a>
+      <a class="share-button gitlab" href="https://gitlab.com/HEXcube" target="_blank">
+        <span><i class="fa fa-gitlab"></i></span>
+      </a>
+      <a class="share-button launchpad" href="https://launchpad.net/~hexcube" target="_blank">
+        <span><i class="fa fa-code"></i></span>
+      </a>
+      <a class="share-button facebook" href="https://facebook.com/HEXcube" target="_blank">
+        <span><i class="fa fa-facebook"></i></span>
+      </a>
+  </nav>
 
-<footer>
-    <p>&copy; 2016 HEXcube</p>
-</footer>
+  <footer>
+      <p>&copy; <span id="copyright-year"></span> HEXcube</p>
+  </footer>
 
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+  <!-- Copyright Year Autoupdate -->
+  <script type='text/javascript' src="assets/js/copyright-year-update.js"></script>
 </body>
 
 </html>
