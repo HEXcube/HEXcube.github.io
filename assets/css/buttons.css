@@ -62,13 +62,14 @@
 }
 
 
-/* Colours */
+/* Colors */
 .share-button.twitter {background-color: #38A1F3;}
-.share-button.askubuntu {background-color: #E95420}
+.share-button.stack {background-color: #1E5397}
 .share-button.deviantart {background-color: #000;}
 .share-button.deviantart i {color: #50CC47;}
 .share-button.github {background-color: #4078C0;}
 .share-button.gitlab {background-color: #E2432A;}
 .share-button.launchpad {background-color: #EEE;}
 .share-button.launchpad i {color: #444;}
+.share-button.steam {background-color: #1B2838;}
 .share-button.facebook {background-color: #3B5998;}
