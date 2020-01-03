@@ -78,3 +78,36 @@ footer {
 footer p {
     margin: auto;
 }
+
+/*
+    Hearbeat Animation
+    Derived from https://codepen.io/ksycz/pen/MVvqpy
+*/
+
+.heartbeat-animation {
+    animation: 1.25s infinite heartbeat;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.05);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* end - Hearbeat Animation */
