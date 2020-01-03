@@ -1,8 +1,8 @@
 .share-button {
     display:inline-block;
     margin:4px 6px;
-    width:64px;
-    height: 64px;
+    width:32px;
+    height: 32px;
     border-radius:32px;
     padding: 0;
     color: #FFF;
@@ -44,7 +44,7 @@
 
 .share-button span {
     font-size: 24px;
-    line-height: 52px;
+    line-height: 26px;
     text-transform: uppercase;
     font-weight: 700;
     margin: 0;
@@ -52,13 +52,30 @@
 }
 
 .share-button i {
-    font-size: 32px;
+    font-size: 16px;
     vertical-align: middle;
     text-align: center;
-    line-height: 66px;
-    width: 64px;
+    line-height: 33px;
+    width: 24px;
     margin: 0;
     padding: 0;
+}
+
+@media (min-width: 992px) {
+    .share-button {
+        width:64px;
+        height: 64px;
+    }
+
+    .share-button span {
+        line-height: 52px;
+    }
+
+    .share-button i {
+        font-size: 32px;
+        line-height: 66px;
+        width: 64px;
+    }
 }
 
 
