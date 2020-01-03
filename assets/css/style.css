@@ -17,7 +17,7 @@ html, body
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Comfortaa', cursive;
     display: flex;
     flex-direction: column;
 
