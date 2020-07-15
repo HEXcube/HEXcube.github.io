@@ -6,7 +6,7 @@
     border-radius:32px;
     padding: 0;
     color: #FFF;
-    background-color: #FFF;
+    background-color: #1f1f1f;
     outline: none;
     text-decoration: none;
     /* border, highlight, inner shadow, drop shadow */
@@ -88,5 +88,6 @@
 .share-button.gitlab {background-color: #E2432A;}
 .share-button.launchpad {background-color: #EEE;}
 .share-button.launchpad i {color: #444;}
+.share-button.medium {background-color: #191919;}
 .share-button.steam {background-color: #1B2838;}
 .share-button.facebook {background-color: #3B5998;}
