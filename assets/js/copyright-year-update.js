@@ -6,6 +6,6 @@
   https://stackoverflow.com/questions/1358810/how-do-i-change-the-text-of-a-span-element-in-javascript#1358815
 */
 
-$(function() {
-  document.getElementById("copyright-year").textContent = (new Date().getFullYear())
-})
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("copyright-year").textContent = new Date().getFullYear();
+});
