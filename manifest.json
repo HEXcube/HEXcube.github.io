@@ -1,0 +1,21 @@
+{
+  "name": "Rohan Villoth",
+  "short_name": "Rohan's Site",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6a1b9a",
+  "description": "Personal website of Rohan 'HEXcube' Villoth",
+  "icons": [
+    {
+      "src": "assets/images/hexcube-logo.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/hexcube-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

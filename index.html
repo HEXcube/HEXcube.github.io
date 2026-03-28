@@ -9,19 +9,24 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta name="theme-color" content="#6a1b9a">
 
-  <!-- Favicon -->
+  <!-- PWA & Favicon -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/images/hexcube-logo.png">
   <link href="assets/images/hexcube-logo.png" rel="icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-  <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+  <link type="text/css" rel="stylesheet" href="assets/styles/style.css">
 </head>
 
 <body class="custom-font">
   <header>
-    <h1 class="custom-font">Rohan's Website</h1>
+    <h1 class="custom-font">Rohan Villoth</h1>
+    <button id="theme-toggle" aria-label="Settings" class="theme-toggle-btn">
+      <i class="fa-solid fa-moon"></i>
+    </button>
   </header>
 
   <section>
@@ -82,11 +87,63 @@
     <p>&copy; <span id="copyright-year"></span> Rohan Villoth</p>
   </footer>
 
+  <!-- Theme Toggle Logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggleBtn = document.getElementById("theme-toggle");
+      const icon = toggleBtn.querySelector("i");
+      
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme) {
+        document.documentElement.className = currentTheme;
+      }
+      updateIcon(document.documentElement.className);
+
+      toggleBtn.addEventListener("click", function() {
+        let theme = document.documentElement.className;
+        if (theme === "theme-dark") {
+          theme = "theme-light";
+        } else if (theme === "theme-light") {
+          theme = ""; // Auto
+        } else {
+          theme = "theme-dark"; // Dark
+        }
+        
+        document.documentElement.className = theme;
+        if (theme) {
+          localStorage.setItem("theme", theme);
+        } else {
+          localStorage.removeItem("theme");
+        }
+        updateIcon(theme);
+      });
+
+      function updateIcon(theme) {
+        if (theme === "theme-dark") {
+          icon.className = "fa-solid fa-sun"; // Current dark, next is light
+        } else if (theme === "theme-light") {
+          icon.className = "fa-solid fa-desktop"; // Current light, next is auto
+        } else {
+          icon.className = "fa-solid fa-moon"; // Current auto, next is dark
+        }
+      }
+    });
+  </script>
+
   <!-- Copyright Year Autoupdate -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("copyright-year").textContent = new Date().getFullYear();
     });
+  </script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
   </script>
 </body>
 
