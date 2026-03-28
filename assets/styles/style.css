@@ -3,11 +3,11 @@
    ========================================= */
 :root {
     --bg-main: #ffffff;
-    --bg-header-footer: #222222;
+    --bg-header-footer: #f8f9fa;
     --text-main: #333333;
-    --text-header-footer: #ffffff;
+    --text-header-footer: #333333;
     --accent-color: #6a1b9a;
-    --share-bg: #1f1f1f;
+    --share-bg: #333333;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +15,7 @@
         --bg-main: #121212;
         --bg-header-footer: #1e1e1e;
         --text-main: #e0e0e0;
+        --text-header-footer: #ffffff;
         --accent-color: #ba68c8;
         --share-bg: #333333;
     }
@@ -24,17 +25,18 @@ html.theme-dark {
     --bg-main: #121212;
     --bg-header-footer: #1e1e1e;
     --text-main: #e0e0e0;
+    --text-header-footer: #ffffff;
     --accent-color: #ba68c8;
     --share-bg: #333333;
 }
 
 html.theme-light {
     --bg-main: #ffffff;
-    --bg-header-footer: #222222;
+    --bg-header-footer: #f8f9fa;
     --text-main: #333333;
-    --text-header-footer: #ffffff;
+    --text-header-footer: #333333;
     --accent-color: #6a1b9a;
-    --share-bg: #1f1f1f;
+    --share-bg: #333333;
 }
 
 html {
@@ -212,7 +214,7 @@ footer p {
    4. BRAND COLORS
    ========================================= */
 .share-button.x {
-    background-color: #15202b;
+    background-color: #000;
 }
 
 .share-button.stack {
@@ -300,23 +302,37 @@ footer p {
 /* end - Hearbeat Animation */
 
 /* =========================================
-   6. THEME TOGGLE
+   6. THEME SEGMENT CONTROL
    ========================================= */
-.theme-toggle-btn {
-    background: none;
-    border: none;
-    color: var(--text-header-footer);
-    font-size: 1.5rem;
-    cursor: pointer;
+.theme-segment {
     position: absolute;
     right: 1em;
     top: 50%;
     transform: translateY(-50%);
-    padding: 0.5em;
-    outline: none;
-    transition: color 0.3s ease;
+    display: flex;
+    background-color: var(--share-bg);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
 }
 
-.theme-toggle-btn:hover {
-    color: var(--accent-color);
+.theme-segment button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 0.4em 0.8em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.theme-segment button:hover {
+    opacity: 0.8;
+}
+
+.theme-segment button.active {
+    background-color: var(--accent-color);
+    color: #ffffff;
 }

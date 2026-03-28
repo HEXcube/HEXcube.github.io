@@ -24,9 +24,11 @@
 <body class="custom-font">
   <header>
     <h1 class="custom-font">Rohan Villoth</h1>
-    <button id="theme-toggle" aria-label="Settings" class="theme-toggle-btn">
-      <i class="fa-solid fa-moon"></i>
-    </button>
+    <div class="theme-segment" id="theme-segment">
+      <button data-theme="theme-light" aria-label="Light Theme"><i class="fa-solid fa-sun"></i></button>
+      <button data-theme="" aria-label="System Theme"><i class="fa-solid fa-desktop"></i></button>
+      <button data-theme="theme-dark" aria-label="Dark Theme"><i class="fa-solid fa-moon"></i></button>
+    </div>
   </header>
 
   <section>
@@ -87,45 +89,40 @@
     <p>&copy; <span id="copyright-year"></span> Rohan Villoth</p>
   </footer>
 
-  <!-- Theme Toggle Logic -->
+  <!-- Theme Segment Logic -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const toggleBtn = document.getElementById("theme-toggle");
-      const icon = toggleBtn.querySelector("i");
+      const segmentContainer = document.getElementById("theme-segment");
+      if (!segmentContainer) return;
+      const buttons = segmentContainer.querySelectorAll("button");
       
-      const currentTheme = localStorage.getItem("theme");
+      const currentTheme = localStorage.getItem("theme") || "";
       if (currentTheme) {
         document.documentElement.className = currentTheme;
       }
-      updateIcon(document.documentElement.className);
+      updateActiveBtn(document.documentElement.className);
 
-      toggleBtn.addEventListener("click", function() {
-        let theme = document.documentElement.className;
-        if (theme === "theme-dark") {
-          theme = "theme-light";
-        } else if (theme === "theme-light") {
-          theme = ""; // Auto
-        } else {
-          theme = "theme-dark"; // Dark
-        }
-        
-        document.documentElement.className = theme;
-        if (theme) {
-          localStorage.setItem("theme", theme);
-        } else {
-          localStorage.removeItem("theme");
-        }
-        updateIcon(theme);
+      buttons.forEach(btn => {
+        btn.addEventListener("click", function() {
+          let theme = this.getAttribute("data-theme");
+          document.documentElement.className = theme;
+          if (theme) {
+            localStorage.setItem("theme", theme);
+          } else {
+            localStorage.removeItem("theme");
+          }
+          updateActiveBtn(theme);
+        });
       });
 
-      function updateIcon(theme) {
-        if (theme === "theme-dark") {
-          icon.className = "fa-solid fa-sun"; // Current dark, next is light
-        } else if (theme === "theme-light") {
-          icon.className = "fa-solid fa-desktop"; // Current light, next is auto
-        } else {
-          icon.className = "fa-solid fa-moon"; // Current auto, next is dark
-        }
+      function updateActiveBtn(theme) {
+        buttons.forEach(btn => {
+          if (btn.getAttribute("data-theme") === theme) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
       }
     });
   </script>
