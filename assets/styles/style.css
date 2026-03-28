@@ -9,6 +9,8 @@
     --text-header-footer-light: #333333;
     --accent-light: #6a1b9a;
     --share-bg-light: #333333;
+    --btn-shadow-light: 0 3px 6px #00000026, 0 1px 3px #0000001a;
+    --btn-border-light: transparent;
 
     --bg-main-dark: #121212;
     --bg-header-footer-dark: #1e1e1e;
@@ -16,6 +18,8 @@
     --text-header-footer-dark: white;
     --accent-dark: #ba68c8;
     --share-bg-dark: #333333;
+    --btn-shadow-dark: none;
+    --btn-border-dark: var(--accent-dark);
 
     /* --- Default Active Theme (Light) --- */
     --bg-main: var(--bg-main-light);
@@ -24,6 +28,8 @@
     --text-header-footer: var(--text-header-footer-light);
     --accent-color: var(--accent-light);
     --share-bg: var(--share-bg-light);
+    --btn-shadow: var(--btn-shadow-light);
+    --btn-border: var(--btn-border-light);
 }
 
 html.theme-light {
@@ -33,6 +39,8 @@ html.theme-light {
     --text-header-footer: var(--text-header-footer-light);
     --accent-color: var(--accent-light);
     --share-bg: var(--share-bg-light);
+    --btn-shadow: var(--btn-shadow-light);
+    --btn-border: var(--btn-border-light);
 }
 
 html.theme-dark {
@@ -42,6 +50,8 @@ html.theme-dark {
     --text-header-footer: var(--text-header-footer-dark);
     --accent-color: var(--accent-dark);
     --share-bg: var(--share-bg-dark);
+    --btn-shadow: var(--btn-shadow-dark);
+    --btn-border: var(--btn-border-dark);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,6 +62,8 @@ html.theme-dark {
         --text-header-footer: var(--text-header-footer-dark);
         --accent-color: var(--accent-dark);
         --share-bg: var(--share-bg-dark);
+        --btn-shadow: var(--btn-shadow-dark);
+        --btn-border: var(--btn-border-dark);
     }
 }
 
@@ -184,7 +196,7 @@ footer p {
     outline: none;
     text-decoration: none;
     /* border, highlight, inner shadow, drop shadow */
-    box-shadow: 0 1px 0 0 #0000001a;
+    box-shadow: var(--btn-shadow), 0 0 0 2px var(--btn-border);
     transition: 0.4s;
 }
 
@@ -351,6 +363,7 @@ footer p {
     border-radius: 20px;
     padding: 3px;
     gap: 2px;
+    box-shadow: var(--btn-shadow), 0 0 0 2px var(--btn-border);
 }
 
 .theme-segment button {
