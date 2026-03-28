@@ -81,7 +81,6 @@ nav {
     box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 -3px 6px rgba(0, 0, 0, 0.23);
 }
 
-
 footer {
     display: flex;
     height: 2em;
@@ -125,14 +124,12 @@ footer p {
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
 }
 
-
 .share-button i,
 .share-button span {
     margin: 8px;
     vertical-align: middle;
     color: #FFF;
 }
-
 
 .share-button:active span {
     color: #FFF;
@@ -197,6 +194,22 @@ footer p {
 
 .share-button.github {
     background-color: #26115F;
+}
+
+.share-button.linkedin {
+    background-color: #0A66C2;
+}
+
+.share-button.dev {
+    background-color: #0A0A0A;
+}
+
+.share-button.instagram {
+    background-color: #E4405F;
+}
+
+.share-button.youtube {
+    background-color: #FF0000;
 }
 
 .share-button.gitlab {
