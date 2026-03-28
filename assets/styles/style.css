@@ -1,42 +1,34 @@
 /* =========================================
    1. GLOBAL & BASE STYLES
    ========================================= */
-:root {
-    --bg-main: #ffffff;
+:root,
+html.theme-light {
+    --bg-main: white;
     --bg-header-footer: #f8f9fa;
     --text-main: #333333;
     --text-header-footer: #333333;
     --accent-color: #6a1b9a;
     --share-bg: #333333;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-main: #121212;
-        --bg-header-footer: #1e1e1e;
-        --text-main: #e0e0e0;
-        --text-header-footer: #ffffff;
-        --accent-color: #ba68c8;
-        --share-bg: #333333;
-    }
 }
 
 html.theme-dark {
     --bg-main: #121212;
     --bg-header-footer: #1e1e1e;
     --text-main: #e0e0e0;
-    --text-header-footer: #ffffff;
+    --text-header-footer: white;
     --accent-color: #ba68c8;
     --share-bg: #333333;
 }
 
-html.theme-light {
-    --bg-main: #ffffff;
-    --bg-header-footer: #f8f9fa;
-    --text-main: #333333;
-    --text-header-footer: #333333;
-    --accent-color: #6a1b9a;
-    --share-bg: #333333;
+@media (prefers-color-scheme: dark) {
+    :root:not(.theme-light) {
+        --bg-main: #121212;
+        --bg-header-footer: #1e1e1e;
+        --text-main: #e0e0e0;
+        --text-header-footer: white;
+        --accent-color: #ba68c8;
+        --share-bg: #333333;
+    }
 }
 
 html {
@@ -86,7 +78,7 @@ header {
     height: 6em;
     z-index: 1;
     border-bottom: 4px solid var(--accent-color);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d;
     position: relative;
 }
 
@@ -120,7 +112,7 @@ footer {
     z-index: 1;
     padding: 1em 1em 0.5em 1em;
     border-top: 4px solid var(--accent-color);
-    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 -3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 -3px 6px #00000029, 0 -3px 6px #0000003b;
 }
 
 footer p {
@@ -139,12 +131,12 @@ footer p {
     height: 32px;
     border-radius: 32px;
     padding: 0;
-    color: #FFF;
+    color: white;
     background-color: var(--share-bg);
     outline: none;
     text-decoration: none;
     /* border, highlight, inner shadow, drop shadow */
-    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 0 #0000001a;
     transition: 0.4s;
 }
 
@@ -159,19 +151,19 @@ footer p {
 
 .share-button:active,
 .share-button:active:focus {
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(to top, #ffffff4d, #0000001a);
 }
 
 .share-button i,
 .share-button span {
     margin: 8px;
     vertical-align: middle;
-    color: #FFF;
+    color: white;
 }
 
 .share-button:active span {
-    color: #FFF;
-    text-shadow: 0 2px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-shadow: 0 2px #00000033;
 }
 
 .share-button span {
@@ -215,15 +207,15 @@ footer p {
    4. BRAND COLORS
    ========================================= */
 .share-button.x {
-    background-color: #000;
+    background-color: black;
 }
 
 .share-button.stack {
-    background-color: #1E5397
+    background-color: #1E5397;
 }
 
 .share-button.deviantart {
-    background-color: #000;
+    background-color: black;
 }
 
 .share-button.deviantart i {
@@ -320,7 +312,7 @@ footer p {
 .theme-segment button {
     background: transparent;
     border: none;
-    color: #ffffff;
+    color: white;
     font-size: 1.1rem;
     cursor: pointer;
     border-radius: 16px;
@@ -335,5 +327,5 @@ footer p {
 
 .theme-segment button.active {
     background-color: var(--accent-color);
-    color: #ffffff;
+    color: white;
 }
