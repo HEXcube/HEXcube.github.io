@@ -1,33 +1,57 @@
 /* =========================================
    1. GLOBAL & BASE STYLES
    ========================================= */
-:root,
+:root {
+    /* --- Explicit Color Tokens --- */
+    --bg-main-light: white;
+    --bg-header-footer-light: #f8f9fa;
+    --text-main-light: #333333;
+    --text-header-footer-light: #333333;
+    --accent-light: #6a1b9a;
+    --share-bg-light: #333333;
+
+    --bg-main-dark: #121212;
+    --bg-header-footer-dark: #1e1e1e;
+    --text-main-dark: #e0e0e0;
+    --text-header-footer-dark: white;
+    --accent-dark: #ba68c8;
+    --share-bg-dark: #333333;
+
+    /* --- Default Active Theme (Light) --- */
+    --bg-main: var(--bg-main-light);
+    --bg-header-footer: var(--bg-header-footer-light);
+    --text-main: var(--text-main-light);
+    --text-header-footer: var(--text-header-footer-light);
+    --accent-color: var(--accent-light);
+    --share-bg: var(--share-bg-light);
+}
+
 html.theme-light {
-    --bg-main: white;
-    --bg-header-footer: #f8f9fa;
-    --text-main: #333333;
-    --text-header-footer: #333333;
-    --accent-color: #6a1b9a;
-    --share-bg: #333333;
+    --bg-main: var(--bg-main-light);
+    --bg-header-footer: var(--bg-header-footer-light);
+    --text-main: var(--text-main-light);
+    --text-header-footer: var(--text-header-footer-light);
+    --accent-color: var(--accent-light);
+    --share-bg: var(--share-bg-light);
 }
 
 html.theme-dark {
-    --bg-main: #121212;
-    --bg-header-footer: #1e1e1e;
-    --text-main: #e0e0e0;
-    --text-header-footer: white;
-    --accent-color: #ba68c8;
-    --share-bg: #333333;
+    --bg-main: var(--bg-main-dark);
+    --bg-header-footer: var(--bg-header-footer-dark);
+    --text-main: var(--text-main-dark);
+    --text-header-footer: var(--text-header-footer-dark);
+    --accent-color: var(--accent-dark);
+    --share-bg: var(--share-bg-dark);
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not(.theme-light) {
-        --bg-main: #121212;
-        --bg-header-footer: #1e1e1e;
-        --text-main: #e0e0e0;
-        --text-header-footer: white;
-        --accent-color: #ba68c8;
-        --share-bg: #333333;
+        --bg-main: var(--bg-main-dark);
+        --bg-header-footer: var(--bg-header-footer-dark);
+        --text-main: var(--text-main-dark);
+        --text-header-footer: var(--text-header-footer-dark);
+        --accent-color: var(--accent-dark);
+        --share-bg: var(--share-bg-dark);
     }
 }
 
@@ -75,15 +99,39 @@ footer {
 
 header {
     display: flex;
-    height: 6em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1.5em 1em;
     z-index: 1;
     border-bottom: 4px solid var(--accent-color);
     box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d;
-    position: relative;
+}
+
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 2em;
+        min-height: 6em;
+    }
+}
+
+.header-branding {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.header-logo {
+    width: 40px;
+    height: 40px;
 }
 
 header h1 {
-    margin: auto;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 section {
@@ -298,10 +346,6 @@ footer p {
    6. THEME SEGMENT CONTROL
    ========================================= */
 .theme-segment {
-    position: absolute;
-    right: 1em;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
     background-color: var(--share-bg);
     border-radius: 20px;
