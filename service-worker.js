@@ -1,12 +1,13 @@
-const CACHE_NAME = 'hexcube-site-v2';
+const CACHE_NAME = 'hexcube-site-v2.1';
 const urlsToCache = [
   './',
   './index.html',
-  './assets/css/style.css',
+  './assets/styles/style.css',
   './assets/images/hexcube-logo.png',
   './assets/images/hexcube-logo.svg'
 ];
 
+// Install Event - Precache core assets
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -14,17 +15,44 @@ self.addEventListener('install', event => {
         return cache.addAll(urlsToCache);
       })
   );
+  self.skipWaiting();
 });
 
+// Activate Event - Clean up old unused caches
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.filter(name => name !== CACHE_NAME).map(name => caches.delete(name))
+      );
+    })
+  );
+  self.clients.claim();
+});
+
+// Fetch Event - Stale-While-Revalidate Strategy
 self.addEventListener('fetch', event => {
+  // We only want to handle GET requests
+  if (event.request.method !== 'GET') return;
+
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Cache hit - return response
-        if (response) {
-          return response;
+    caches.match(event.request).then(cachedResponse => {
+      // 1. Kick off the network request in the background to fetch fresh content
+      const fetchPromise = fetch(event.request).then(networkResponse => {
+        // Make sure response is valid before caching
+        if (networkResponse && networkResponse.status === 200) {
+           const responseToCache = networkResponse.clone();
+           caches.open(CACHE_NAME).then(cache => {
+             cache.put(event.request, responseToCache);
+           });
         }
-        return fetch(event.request);
-      })
+        return networkResponse;
+      }).catch(error => {
+        console.warn('Network fetch failed, relying entirely on cache.', error);
+      });
+
+      // 2. Return the cached response immediately if it exists, otherwise wait for the network response
+      return cachedResponse || fetchPromise;
+    })
   );
 });
