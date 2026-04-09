@@ -2,7 +2,7 @@ HEXcube's Website
 =================
 - Link buttons derived from share buttons by [Sam "snwh" Hewitt][snwh]
 - Link icons from [Font Awesome][font-awesome] licensed under [SIL OFL 1.1][SIL-OFL]
-- Thanks to [Philippe Loctaux][philippe] for helping me organize and structure the website :relaxed:
+- Thanks to [Philippe Loctaux][philippe] for helping me organize and structure the website
 
 [snwh]: http://samuelhewitt.com "Sam Hewitt's website"
 [philippe]: https://philippeloctaux.com "Philippe Loctaux's website"
