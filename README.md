@@ -1,5 +1,5 @@
-HEXcube's Website
-=================
+Rohan Villoth's Website
+=======================
 This is my personal website hosted on [GitHub Pages][github-pages]
 
 ### LICENSE

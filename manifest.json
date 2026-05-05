@@ -5,15 +5,15 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#6a1b9a",
-  "description": "Personal website of Rohan 'HEXcube' Villoth",
+  "description": "Personal website of Rohan Villoth",
   "icons": [
     {
-      "src": "assets/images/hexcube-logo.png",
+      "src": "assets/images/rohan-villoth-logo.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "assets/images/hexcube-logo.svg",
+      "src": "assets/images/rohan-villoth-logo.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }

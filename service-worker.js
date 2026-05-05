@@ -1,10 +1,10 @@
-const CACHE_NAME = 'hexcube-site-v2.1';
+const CACHE_NAME = 'rohan-villoth-site-v2.2';
 const urlsToCache = [
   './',
   './index.html',
   './assets/styles/style.css',
-  './assets/images/hexcube-logo.png',
-  './assets/images/hexcube-logo.svg'
+  './assets/images/rohan-villoth-logo.png',
+  './assets/images/rohan-villoth-logo.svg'
 ];
 
 // Install Event - Precache core assets
